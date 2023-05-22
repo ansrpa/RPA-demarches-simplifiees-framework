@@ -1,0 +1,177 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="LogReport" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:dr="clr-namespace:DémarchesSimplifiées.RPA;assembly=DémarchesSimplifiées.RPA" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="StartTime" Type="InArgument(s:DateTime)" />
+    <x:Property Name="Config" Type="InArgument(scg:Dictionary(x:String, x:String))" />
+    <x:Property Name="Dossier" Type="InArgument(dr:Dossier)" />
+    <x:Property Name="Rapport" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="LogObject" Type="OutArgument(njl:JObject)" />
+    <x:Property Name="Statut" Type="InArgument(dr:Statut)" />
+    <x:Property Name="Exception" Type="InArgument(s:Exception)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1252,3163.2</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>LogReport_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.ComponentModel.DataAnnotations</x:String>
+      <x:String>DémarchesSimplifiées.RPA</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="100">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Annotations</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>DémarchesSimplifiées.RPA</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="LogReport" sap:VirtualizedContainerService.HintSize="499.2,3098.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Default="[New DataTable]" Name="newReport" />
+      <Variable x:TypeArguments="s:DateTime" Default="[DateTime.Now]" Name="stopTime" />
+      <Variable x:TypeArguments="sd:DataTable" Name="report" />
+      <Variable x:TypeArguments="s:Enum" Default="[Statut]" Name="statutEnum" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="436.8,102.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Mise à jour du rapport d'activité...&quot;]" />
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Numéro de dossier" DataTable="[newReport]" DefaultValue="[Dossier.Value(Of Integer)(&quot;number&quot;)]" DisplayName="Numéro de dossier" sap:VirtualizedContainerService.HintSize="436.8,197.6" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_15" />
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Date et heure de dépôt" DataTable="[newReport]" DefaultValue="[Dossier(&quot;dateDepot&quot;).ToObject(Of DateTime)]" DisplayName="Date et heure de dépôt" sap:VirtualizedContainerService.HintSize="436.8,197.6" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_16" />
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Début du traitement" DataTable="[newReport]" DefaultValue="[StartTime]" DisplayName="Début du traitement" sap:VirtualizedContainerService.HintSize="436.8,197.6" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_17" />
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Fin du traitement" DataTable="[newReport]" DefaultValue="[stopTime]" DisplayName="Fin du traitement" sap:VirtualizedContainerService.HintSize="436.8,197.6" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_18" />
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Durée d'exécution" DataTable="[newReport]" DefaultValue="[StopTime - startTime]" DisplayName="Durée d'exécution" sap:VirtualizedContainerService.HintSize="436.8,197.6" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_19" />
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Statut" DataTable="[newReport]" DefaultValue="[statutEnum.GetType.GetMember([Enum].GetName(statutEnum.GetType, statutEnum)).First.GetCustomAttribute(Of System.ComponentModel.DataAnnotations.DisplayAttribute).GetName]" DisplayName="Statut" sap:VirtualizedContainerService.HintSize="436.8,197.6" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_20" />
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Message d'erreur" DataTable="[newReport]" DefaultValue="[If(Exception IsNot Nothing, Exception.Message, &quot;&quot;)]" DisplayName="Message d'erreur" sap:VirtualizedContainerService.HintSize="436.8,197.6" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_22" />
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="436.8,332" sap2010:WorkflowViewState.IdRef="ForEach`1_7" Values="[Rapport.Keys]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="x:String">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:String" Name="colName" />
+          </ActivityAction.Argument>
+          <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="[colName]" DataTable="[newReport]" DefaultValue="[Rapport(colName)]" DisplayName="Adding other columns" sap:VirtualizedContainerService.HintSize="334.4,197.6" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_13" />
+        </ActivityAction>
+      </ui:ForEach.Body>
+    </ui:ForEach>
+    <TryCatch DisplayName="Trying to access the report file" sap:VirtualizedContainerService.HintSize="436.8,338.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[report]" DisplayName="Retrieve current report before merging" sap:VirtualizedContainerService.HintSize="333.6,97.6" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Liste des traitements" WorkbookPath="[Config(&quot;Rapport d'activité&quot;)]" />
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Throw Exception="[New Exception(String.Format(&quot;Erreur lors de l’accès au rapport d’activité à l’emplacement « {0} ». Vérifiez qu’il existe encore et qu’il ne soit pas déjà ouvert.&quot;, Config(&quot;Rapport d'activité&quot;)))]" sap:VirtualizedContainerService.HintSize="334.4,98.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:MergeDataTable Destination="[report]" DisplayName="Append new row to report" sap:VirtualizedContainerService.HintSize="436.8,144" sap2010:WorkflowViewState.IdRef="MergeDataTable_1" MissingSchemaAction="Add" Source="[newReport.Rows.Add.Table]" />
+    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[report]" DisplayName="Write updated report" sap:VirtualizedContainerService.HintSize="436.8,125.6" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Liste des traitements" WorkbookPath="[Config(&quot;Rapport d'activité&quot;)]" />
+    <Assign DisplayName="Return completed report as JSON" sap:VirtualizedContainerService.HintSize="436.8,69.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="njl:JObject">[LogObject]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="njl:JObject">[New JObject(From col In newReport.Columns.Cast(Of DataColumn) Select New JProperty(col.ColumnName, JToken.FromObject(newReport.Rows(0)(col))))]</InArgument>
+      </Assign.Value>
+    </Assign>
+  </Sequence>
+</Activity>

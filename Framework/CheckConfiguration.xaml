@@ -1,0 +1,266 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CheckConfiguration" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:dra="clr-namespace:DémarchesSimplifiées.RPA.Activities;assembly=DémarchesSimplifiées.RPA.Activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Config" Type="InOutArgument(scg:Dictionary(x:String, x:String))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1008.8,5500</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>CheckConfiguration_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Configuration</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>DémarchesSimplifiées.RPA.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="70">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>DémarchesSimplifiées.RPA.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Vérification de la configuration du framework" sap:VirtualizedContainerService.HintSize="739.2,5435.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Paramètres" sap:VirtualizedContainerService.HintSize="676.8,3108" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <dra:CheckFolder Config="[Config]" CreateIfNotExists="True" DisplayName="Dossier captures d'écran" sap:VirtualizedContainerService.HintSize="614.4,251.2" sap2010:WorkflowViewState.IdRef="CheckFolder_1" IsRequired="False" Name="Dossier captures d'écran" />
+      <dra:CheckFile Config="[Config]" DisplayName="Modèle de rapport d'activité" sap:VirtualizedContainerService.HintSize="614.4,251.2" sap2010:WorkflowViewState.IdRef="CheckFile_3" IsRequired="True" MustExist="True" Name="Modèle rapport d'activité" />
+      <dra:CheckFolder Config="[Config]" CreateIfNotExists="True" DisplayName="Dossier des rapports d'activité" sap:VirtualizedContainerService.HintSize="614.4,251.2" sap2010:WorkflowViewState.IdRef="CheckFolder_3" IsRequired="False" Name="Dossier rapports d'activité" />
+      <TryCatch DisplayName="Tentative de création du fichier de rapport d'activité, s'il n'existe pas déjà" sap:VirtualizedContainerService.HintSize="614.4,1344.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+        <TryCatch.Try>
+          <Sequence DisplayName="Assemblage du chemin complet vers le fichier" sap:VirtualizedContainerService.HintSize="577.6,1104" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="fileName" />
+              <Variable x:TypeArguments="x:Boolean" Name="defaultFolderExists" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Calcul du nom de fichier du jour" sap:VirtualizedContainerService.HintSize="515.2,69.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[fileName]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[IO.Path.GetFileNameWithoutExtension(Config("Modèle rapport d'activité")) +DateTime.Now.ToString(" yyyy-MM-dd")+IO.Path.GetExtension(Config("Modèle rapport d'activité"))]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <If Condition="[Config(&quot;Dossier rapports d'activité&quot;) IsNot Nothing]" DisplayName="Si un dossier de destination est fourni" sap:VirtualizedContainerService.HintSize="515.2,365.6" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Assign DisplayName="Assign report file name in destination folder" sap:VirtualizedContainerService.HintSize="262.4,69.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[Config("Rapport d'activité")]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[IO.Path.Combine(Config("Dossier rapports d'activité"), fileName)]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </If.Then>
+              <If.Else>
+                <Assign DisplayName="Assign report file name in default folder" sap:VirtualizedContainerService.HintSize="262.4,69.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[Config("Rapport d'activité")]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[IO.Path.Combine(Config("Dossier temporaire"), fileName)]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </If.Else>
+            </If>
+            <If Condition="[IO.File.Exists(Config(&quot;Rapport d'activité&quot;))]" DisplayName="If daily report file already exists" sap:VirtualizedContainerService.HintSize="515.2,465.6" sap2010:WorkflowViewState.IdRef="If_3">
+              <If.Then>
+                <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Try reading from existing report file" sap:VirtualizedContainerService.HintSize="433.6,135.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[Config(&quot;Rapport d'activité&quot;)]">
+                  <ui:ExcelApplicationScope.Body>
+                    <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                      </ActivityAction.Argument>
+                    </ActivityAction>
+                  </ui:ExcelApplicationScope.Body>
+                </ui:ExcelApplicationScope>
+              </If.Then>
+              <If.Else>
+                <ui:CopyFile ContinueOnError="False" Destination="[Config(&quot;Rapport d'activité&quot;)]" DisplayName="Create new report file" sap:VirtualizedContainerService.HintSize="333.6,164.8" sap2010:WorkflowViewState.IdRef="CopyFile_1" Path="[Config(&quot;Modèle rapport d'activité&quot;)]" />
+              </If.Else>
+            </If>
+          </Sequence>
+        </TryCatch.Try>
+        <TryCatch.Catches>
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="580.8,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ActivityAction x:TypeArguments="s:Exception">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Report file cannot be written" sap:VirtualizedContainerService.HintSize="400,155.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Rethrow sap:VirtualizedContainerService.HintSize="337.6,32" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+              </Sequence>
+            </ActivityAction>
+          </Catch>
+        </TryCatch.Catches>
+      </TryCatch>
+      <dra:CheckFolder Config="[Config]" CreateIfNotExists="True" DisplayName="Dossier temporaire" sap:VirtualizedContainerService.HintSize="614.4,251.2" sap2010:WorkflowViewState.IdRef="CheckFolder_2" IsRequired="False" Name="Dossier temporaire" />
+      <dra:CheckString Config="[Config]" DisplayName="Identifiant instructeur robot" sap:VirtualizedContainerService.HintSize="614.4,197.6" sap2010:WorkflowViewState.IdRef="CheckString_2" IsRequired="True" Name="Identifiant instructeur robot" />
+      <dra:CheckString Config="[Config]" DisplayName="Identifiant instructeur reprise" sap:VirtualizedContainerService.HintSize="614.4,197.6" sap2010:WorkflowViewState.IdRef="CheckString_3" IsRequired="True" Name="Identifiant instructeur reprise" />
+    </Sequence>
+    <Sequence DisplayName="Ressources" sap:VirtualizedContainerService.HintSize="676.8,558.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <dra:CheckString Config="[Config]" DisplayName="Jeton API DS" sap:VirtualizedContainerService.HintSize="337.6,197.6" sap2010:WorkflowViewState.IdRef="CheckString_1" IsRequired="True" Name="Jeton API DS" />
+      <dra:CheckInt MaxValue="{x:Null}" Config="[Config]" DisplayName="Numéro démarche" sap:VirtualizedContainerService.HintSize="337.6,197.6" sap2010:WorkflowViewState.IdRef="CheckInt_1" IsRequired="True" MinValue="[0]" Name="Numéro démarche" />
+    </Sequence>
+    <Sequence DisplayName="Fichiers" sap:VirtualizedContainerService.HintSize="676.8,1565.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="messages" />
+        <Variable x:TypeArguments="x:String" Name="nomMessage" />
+        <Variable x:TypeArguments="x:String" Name="corpsMessage" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <dra:CheckFile Config="[Config]" DisplayName="Messages types DS" sap:VirtualizedContainerService.HintSize="465.6,251.2" sap2010:WorkflowViewState.IdRef="CheckFile_4" IsRequired="True" MustExist="True" Name="Messages types DS" />
+      <ui:ReadTextFile File="{x:Null}" Content="[messages]" DisplayName="Read Text File" FileName="[Config(&quot;Messages types DS&quot;)]" sap:VirtualizedContainerService.HintSize="465.6,90.4" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="465.6,308" sap2010:WorkflowViewState.IdRef="ForEach`1_7" Values="[messages.split(&quot;==&quot;).Where(Function(str) Not String.IsNullOrEmpty(str))]">
+        <ui:ForEach.Body>
+          <ActivityAction x:TypeArguments="x:String">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:String" Name="message" />
+            </ActivityAction.Argument>
+            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="430.4,173.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+              <ui:MultipleAssign.AssignOperations>
+                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[nomMessage]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[message.Split((VbCr+VbLf+VbCrLf).ToCharArray, 2).First.Trim]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[corpsMessage]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[message.Split((VbCr+VbLf+VbCrLf).ToCharArray, 2).Last.Trim]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[Config("Message type "+nomMessage)]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[corpsMessage]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                </scg:List>
+              </ui:MultipleAssign.AssignOperations>
+            </ui:MultipleAssign>
+          </ActivityAction>
+        </ui:ForEach.Body>
+      </ui:ForEach>
+      <dra:CheckString Config="[Config]" DisplayName="Message type Acceptation" sap:VirtualizedContainerService.HintSize="465.6,197.6" sap2010:WorkflowViewState.IdRef="CheckString_4" IsRequired="True" Name="Message type Acceptation" />
+      <dra:CheckString Config="[Config]" DisplayName="Message type Incomplétude" sap:VirtualizedContainerService.HintSize="465.6,197.6" sap2010:WorkflowViewState.IdRef="CheckString_5" IsRequired="True" Name="Message type Incomplétude" />
+      <dra:CheckString Config="[Config]" DisplayName="Message type Refus" sap:VirtualizedContainerService.HintSize="465.6,197.6" sap2010:WorkflowViewState.IdRef="CheckString_6" IsRequired="True" Name="Message type Refus" />
+    </Sequence>
+  </Sequence>
+</Activity>

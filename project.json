@@ -1,0 +1,66 @@
+{
+  "name": "DémarchesSimplifiées.RPA.REFramework",
+  "description": "REFramework Démarches Simplifiées",
+  "main": "Main.xaml",
+  "dependencies": {
+    "DémarchesSimplifiées.RPA.Activities": "1.0.0",
+    "UiPath.Excel.Activities": "[2.16.0]",
+    "UiPath.PDF.Activities": "[3.11.0]",
+    "UiPath.System.Activities": "[22.10.4]",
+    "UiPath.UIAutomation.Activities": "[22.10.3]",
+    "UiPath.WebAPI.Activities": "[1.13.3]"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "22.10.3.0",
+  "projectVersion": "1.0.0",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": true,
+    "pipType": "ChildSession"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [],
+    "modernBehavior": false
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "fd0835b8-c9f9-437c-aca3-5bfeb4289919",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": true,
+  "templateProjectData": {
+    "defaultProjectDescription": "",
+    "defaultProjectName": ""
+  },
+  "publishData": {
+    "iconUrl": ".screenshots/ds.png"
+  },
+  "targetFramework": "Windows"
+}
